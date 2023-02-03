@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+
+<suite name="Suite" parallel="tests" thread-count="2">
+	
+	<listeners>
+		<listener class-name="common.DemoTransformer"></listener>
+		<listener class-name="common.TestngITestListener"></listener>
+	</listeners>
+	
+	<test name="vtigerTest">
+		
+		<parameter name="username" value="admin"></parameter>
+		<parameter name="password" value="Test@123"></parameter>
+		
+		<classes>
+			<class name="vtiger.LoginTest" />
+			<class name="vtiger.FunctionalityTest" />
+		</classes>
+	
+	</test> <!-- vtigerTest -->
+
+</suite> <!-- Suite -->

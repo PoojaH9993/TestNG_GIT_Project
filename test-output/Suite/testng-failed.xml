@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="methods" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="common.DemoTransformer"/>
+    <listener class-name="common.TestngITestListener"/>
+  </listeners>
+  <test thread-count="2" parallel="methods" name="vtigerTest(failed)">
+    <parameter name="password" value="Test@123"/>
+    <parameter name="username" value="admin"/>
+    <classes>
+      <class name="vtiger.FunctionalityTest">
+        <methods>
+          <include name="initializeBrowser"/>
+          <include name="closeBrowser"/>
+          <include name="initializeObjects"/>
+          <include name="TC_08_dataDrivenTestCase"/>
+          <include name="TC_06_validateSearchBox"/>
+          <include name="TC_07_marketingLeadsCheck"/>
+          <include name="logoutVtiger"/>
+        </methods>
+      </class> <!-- vtiger.FunctionalityTest -->
+      <class name="vtiger.LoginTest">
+        <methods>
+          <include name="initializeObjects"/>
+          <include name="TC_01_loginVtiger"/>
+          <include name="initializeBrowser"/>
+          <include name="closeBrowser"/>
+          <include name="TC_04_loginVtigerwithDataProvider"/>
+          <include name="TC_03_loginVtigerFromExcelSheet"/>
+          <include name="TC_02_loginVtigerFromPropertiesFile"/>
+          <include name="logoutVtiger"/>
+        </methods>
+      </class> <!-- vtiger.LoginTest -->
+    </classes>
+  </test> <!-- vtigerTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->
